@@ -51,15 +51,55 @@ function App() {
   const isSearchingRef = useRef<boolean>(false);
 
   // DATA LOCAL
+  // --- HUMANIZER ENGINE ---
   const generateQueries = () => {
-    const baseWords = ["news", "weather", "tech", "AI", "crypto", "finance", "sport", "recipe", "movie", "game", "health", "travel", "cars", "music", "coding", "react", "vercel", "microsoft", "bing", "chatgpt", "stock", "dollar", "iphone", "android", "samsung", "pixel", "laptop", "pc build", "gpu", "cpu"];
-    const queries = [];
-    for(let i=0; i<200; i++) {
-        const word1 = baseWords[Math.floor(Math.random() * baseWords.length)];
-        const word2 = baseWords[Math.floor(Math.random() * baseWords.length)];
-        queries.push(`${word1} ${word2} ${Math.floor(Math.random() * 1000)}`);
+    // 1. Database Kata (Bisa ditambah sendiri)
+    const tech = ["iPhone 16", "Samsung S24", "MacBook Air", "RTX 4090", "PS5 Pro", "Xiaomi 14", "Windows 11", "Tesla Cybertruck", "AI Robot", "Mechanical Keyboard"];
+    const coding = ["React JS", "Python tutorial", "Vercel hosting", "Tailwind CSS", "Docker container", "Next.js routing", "TypeScript types", "Github actions", "VS Code themes", "API integration"];
+    const finance = ["Bitcoin price", "IHSG hari ini", "Harga Emas Antam", "Saham BBCA", "Cara investasi", "Reksa dana bibit", "Kurs Dollar Rupiah", "Crypto market cap"];
+    const daily = ["Resep nasi goreng", "Jadwal bioskop", "Cuaca Jakarta", "Wisata Bali", "Tiket kereta api", "Lagu viral tiktok", "Outfit kondangan", "Menu diet sehat"];
+    
+    // 2. Pola Kalimat Manusia (Templates)
+    const templates = [
+      (w: string) => `Review jujur ${w} indonesia`,
+      (w: string) => `Harga terbaru ${w} 2024`,
+      (w: string) => `Cara memperbaiki ${w} error`,
+      (w: string) => `Tutorial ${w} untuk pemula`,
+      (w: string) => `Kelebihan dan kekurangan ${w}`,
+      (w: string) => `Berita ${w} terkini`,
+      (w: string) => `Spesifikasi lengkap ${w}`,
+      (w: string) => `Download driver ${w}`,
+      (w: string) => `Wallpaper ${w} HD 4k`,
+      (w: string) => `Forum diskusi ${w}`,
+      (w: string) => `Alternatif selain ${w}`,
+      (w: string) => `Kenapa ${w} sangat populer?`
+    ];
+
+    const allWords = [...tech, ...coding, ...finance, ...daily];
+    const queries: string[] = [];
+
+    // 3. Generate 100 Kalimat Unik
+    for (let i = 0; i < 150; i++) {
+      // Ambil topik acak
+      const word = allWords[Math.floor(Math.random() * allWords.length)];
+      // Ambil template acak
+      const template = templates[Math.floor(Math.random() * templates.length)];
+      
+      // Buat kalimat
+      queries.push(template(word));
     }
-    return queries;
+
+    // Tambahkan variasi pencarian "Vs" (Perbandingan)
+    for (let i = 0; i < 50; i++) {
+        const w1 = tech[Math.floor(Math.random() * tech.length)];
+        const w2 = tech[Math.floor(Math.random() * tech.length)];
+        if (w1 !== w2) {
+            queries.push(`Bedingan ${w1} vs ${w2}`);
+        }
+    }
+
+    // Shuffle array (Acak urutan agar tidak monoton)
+    return queries.sort(() => Math.random() - 0.5);
   };
 
   const [data] = useState<string[]>(generateQueries());
