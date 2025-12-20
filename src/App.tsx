@@ -57,7 +57,7 @@ function App() {
     const tech = ["Asus x302la", "Vivo y21", "Vivo Gaming Phone", "iPhone 16", "Samsung S24", "MacBook Air", "RTX 4090", "PS5 Pro", "Xiaomi 14", "Windows 11", "Tesla Cybertruck", "AI Robot", "Mechanical Keyboard"];
     const coding = ["React JS", "Python tutorial", "Vercel hosting", "Tailwind CSS", "Docker container", "Next.js routing", "TypeScript types", "Github actions", "VS Code themes", "API integration"];
     const finance = ["Bitcoin price", "IHSG hari ini", "Harga Emas Antam", "Saham BBCA", "Cara investasi", "Reksa dana bibit", "Kurs Dollar Rupiah", "Crypto market cap"];
-    const daily = ["Yukinoshita web id", "Rendang", "Cuaca Banyumas", "Nasi Padang", "Nasi Kucing", "Nasi Tiwul", "Nasi Kecap", "Sambel ijo", "Nasi rendang", "Masak Nasi", Resep nasi goreng", "Jadwal bioskop", "Cuaca Jakarta", "Wisata Bali", "Tiket kereta api", "Lagu viral tiktok", "Outfit kondangan", "Menu diet sehat"];
+    const daily = ["Yukinoshita web id", "Rendang", "Cuaca Banyumas", "Nasi Padang", "Nasi Kucing", "Nasi Tiwul", "Nasi Kecap", "Sambel ijo", "Nasi rendang", "Masak Nasi", "Resep nasi goreng", "Jadwal bioskop", "Cuaca Jakarta", "Wisata Bali", "Tiket kereta api", "Lagu viral tiktok", "Outfit kondangan", "Menu diet sehat"];
     
     // 2. Pola Kalimat Manusia (Templates)
     const templates = [
