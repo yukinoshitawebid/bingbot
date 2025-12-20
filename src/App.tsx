@@ -181,7 +181,7 @@ function App() {
             <Button onClick={closeAllOpenedTabs} variant="secondary" className="w-full mt-2 text-sm">🧹 Tutup Semua Tab (Force Close)</Button>
           </div>
         </div>
-        <footer className="mt-8 text-center"><p className="text-slate-500 text-xs">Dibuat dengan ❤️ untuk pemburu poin.</p></footer>
+        <footer className="mt-8 text-center"><p className="text-slate-500 text-xs">Dibuat dengan ❤️ By DomathID untuk pemburu poin.</p></footer>
       </div>
     </div>
   );
