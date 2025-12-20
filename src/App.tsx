@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { Analytics } from '@vercel/analytics/react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -50,9 +50,9 @@ function App() {
   
   const isSearchingRef = useRef<boolean>(false);
 
-  // DATA LOCAL (Langsung di sini agar tidak perlu file import lain)
+  // DATA LOCAL
   const generateQueries = () => {
-    const baseWords = ["news", "weather", "tech", "AI", "crypto", "finance", "sport", "recipe", "movie", "game", "health", "travel", "cars", "music", "coding", "react", "vercel", "microsoft", "bing", "chatgpt"];
+    const baseWords = ["news", "weather", "tech", "AI", "crypto", "finance", "sport", "recipe", "movie", "game", "health", "travel", "cars", "music", "coding", "react", "vercel", "microsoft", "bing", "chatgpt", "stock", "dollar", "iphone", "android", "samsung", "pixel", "laptop", "pc build", "gpu", "cpu"];
     const queries = [];
     for(let i=0; i<200; i++) {
         const word1 = baseWords[Math.floor(Math.random() * baseWords.length)];
