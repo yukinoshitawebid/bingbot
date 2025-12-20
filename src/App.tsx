@@ -41,6 +41,7 @@ function App() {
   const generateDynamicQuery = () => {
     // 1. Subject (Topik Utama) - Bisa ditambah ribuan kata di sini
     const subjects = [
+      "Wisata Banyumas", "Wisata Pantai", "Wisata Purwokerto", "Menara Pandang", "Menara Pandang Pwt",
       "iPhone 16", "Samsung S25 Ultra", "MacBook M3", "NVIDIA RTX 5090", "Tesla Model Y", 
       "Bitcoin", "Ethereum", "Saham BBCA", "Harga Emas", "Kurs Rupiah", 
       "Resep Nasi Goreng", "Cara Diet Sehat", "Wisata Bali", "Tiket Pesawat Murah", "Hotel di Jakarta",
@@ -165,9 +166,9 @@ function App() {
           
           <div className="text-center mb-8">
             <h1 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 mb-2">
-              BingBot <span className="text-white text-base font-mono align-top opacity-50">Unlimited</span>
+              BingBot <span className="text-white text-base font-mono align-top opacity-50">v2.1</span>
             </h1>
-            <p className="text-slate-400 text-sm">Engine Generator Keyword Otomatis.</p>
+            <p className="text-slate-400 text-sm">Auto Search Bing Otomatis.</p>
           </div>
 
           <div className="space-y-6">
