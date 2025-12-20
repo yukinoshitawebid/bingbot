@@ -27,8 +27,8 @@ const Input = ({ label, ...props }: any) => (
 // --- Main App ---
 function App() {
   const [numSearches, setNumSearches] = useState<string>('30');
-  const [minDelay, setMinDelay] = useState<string>('2000');
-  const [maxDelay, setMaxDelay] = useState<string>('5000');
+  const [minDelay, setMinDelay] = useState<string>('8000');
+  const [maxDelay, setMaxDelay] = useState<string>('10000');
   const [autoClose, setAutoClose] = useState<boolean>(true);
   const [progress, setProgress] = useState<number>(0);
   const [currentQuery, setCurrentQuery] = useState<string>(""); // Untuk menampilkan apa yang sedang dicari
