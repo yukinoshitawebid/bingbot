@@ -213,7 +213,7 @@ function App() {
             <Button onClick={closeAllOpenedTabs} variant="secondary" className="w-full mt-2 text-sm">🧹 Tutup Semua Tab</Button>
           </div>
         </div>
-        <footer className="mt-8 text-center"><p className="text-slate-500 text-xs">Arzzam &copy; 2025</p></footer>
+        <footer className="mt-8 text-center"><p className="text-slate-500 text-xs">DomathID &copy; 2025</p></footer>
       </div>
     </div>
   );
