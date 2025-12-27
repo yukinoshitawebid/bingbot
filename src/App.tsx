@@ -41,29 +41,165 @@ function App() {
   const generateDynamicQuery = () => {
     // 1. Subject (Topik Utama) - Bisa ditambah ribuan kata di sini
     const subjects = [
-      "Wisata Banyumas", "Wisata Pantai", "Wisata Purwokerto", "Menara Pandang", "Menara Pandang Pwt",
-      "iPhone 16", "Samsung S25 Ultra", "MacBook M3", "NVIDIA RTX 5090", "Tesla Model Y", 
-      "Bitcoin", "Ethereum", "Saham BBCA", "Harga Emas", "Kurs Rupiah", 
-      "Resep Nasi Goreng", "Cara Diet Sehat", "Wisata Bali", "Tiket Pesawat Murah", "Hotel di Jakarta",
-      "React JS", "Next.js 14", "Vercel Deployment", "Python AI", "ChatGPT 5",
-      "Timnas Indonesia", "Liga Inggris", "MotoGP", "F1 Racing", "Badminton",
-      "Film Marvel Terbaru", "Anime One Piece", "Lagu Viral TikTok", "Game GTA VI", "Mobile Legends"
-    ];
+  // Wisata & Lokal
+  "Wisata Banyumas","Wisata Purwokerto","Wisata Baturraden","Menara Pandang","Menara Pandang Pwt",
+  "Wisata Pantai","Wisata Pantai Selatan","Wisata Bali","Wisata Jogja","Wisata Bandung",
+  "Wisata Jakarta","Wisata Semarang","Wisata Malang","Wisata Lombok","Wisata Raja Ampat",
+  "Tempat Wisata Murah","Wisata Keluarga","Wisata Alam","Wisata Gunung","Wisata Air Terjun",
+  "Rekomendasi Tempat Liburan","Tiket Pesawat Murah","Hotel di Jakarta","Hotel Murah Purwokerto",
+  "Penginapan Murah","Villa untuk Liburan",
 
-    // 2. Action (Kata Kerja/Depan)
-    const actions = [
-      "Review lengkap", "Spesifikasi", "Harga terbaru", "Kelebihan dan kekurangan", "Cara memperbaiki", 
-      "Tutorial menggunakan", "Berita terkini", "Rumor rilis", "Unboxing", "Komparasi", 
-      "Download driver", "Wallpaper HD", "Forum diskusi", "Kenapa", "Sejarah", 
-      "Tips dan trik", "Solusi masalah", "Panduan lengkap", "Update terbaru", "Analisa"
-    ];
+  // Game & Roblox
+  "roblox","robux","top up robux","harga robux terbaru","cara dapat robux gratis",
+  "game roblox populer","map roblox terbaik","game galau roblox","roblox music playlist",
+  "fish it","fish it roblox","fish it rng","fish it secret fish",
+  "Mobile Legends","Build ML Terbaik","Hero ML Terkuat",
+  "Free Fire","Skin FF Gratis",
+  "Game GTA VI","Game PC Terbaru","Game Android Terbaik",
 
-    // 3. Context (Pelengkap/Belakang)
-    const contexts = [
-      "2025", "di Indonesia", "untuk pemula", "bahasa indonesia", "resmi", 
-      "terpercaya", "paling murah", "original", "vs kompetitor", "yang viral",
-      "hari ini", "minggu ini", "bulan ini", "tahun ini", "terbaik"
-    ];
+  // Teknologi & Gadget
+  "iPhone 16","Samsung S25 Ultra","MacBook M3","Laptop Gaming Terbaik",
+  "NVIDIA RTX 5090","AMD Ryzen Terbaru","PC Gaming Murah",
+  "HP Android Terbaik","HP Murah Spek Tinggi","Perbandingan iPhone dan Android",
+  "Review Smartphone","Harga HP Terbaru",
+  "Tesla Model Y","Mobil Listrik Terbaik","Motor Listrik Indonesia",
+
+  // Finansial & Bisnis
+  "Bitcoin","Ethereum","Harga Crypto Hari Ini","Crypto Bull Run",
+  "Saham BBCA","Saham BBRI","Cara Main Saham","Investasi Saham Pemula",
+  "Harga Emas","Harga Emas Hari Ini","Investasi Emas",
+  "Kurs Rupiah","Dollar ke Rupiah",
+  "Ide Bisnis Online","Bisnis Tanpa Modal","Usaha Sampingan",
+  "Cara Menabung","Aplikasi Keuangan",
+
+  // Kuliner & Kesehatan
+  "Resep Nasi Goreng","Resep Ayam Geprek","Resep Masakan Rumahan",
+  "Makanan Viral","Jajanan Kekinian",
+  "Cara Diet Sehat","Diet Pemula","Tips Hidup Sehat",
+  "Olahraga di Rumah","Cara Menurunkan Berat Badan",
+
+  // Programming & IT
+  "React JS","Next.js 14","Vercel Deployment","Deploy Website di Vercel",
+  "JavaScript Dasar","Belajar JavaScript","Belajar Coding Pemula",
+  "Python AI","Python Machine Learning","Python untuk Pemula",
+  "ChatGPT 5","AI Terbaru","Tools AI Gratis",
+  "Termux Android","Install Package Termux","Linux di Android",
+  "VS Code Extension","Framework Web Terbaik",
+
+  // Hiburan & Media
+  "Film Marvel Terbaru","Film Action Terbaik","Film Indonesia Terbaru",
+  "Anime One Piece","Anime Terbaru","Rekomendasi Anime",
+  "Lagu Viral TikTok","Musik Galau","Playlist Lagu Sedih",
+  "Drama Korea Terbaru","Series Netflix",
+
+  // Olahraga
+  "Timnas Indonesia","Liga Inggris","Liga Champions",
+  "MotoGP","F1 Racing","Badminton Indonesia",
+  "Sepak Bola Dunia","Jadwal Bola Hari Ini",
+
+  // Edukasi & Umum
+  "Berita Teknologi","Berita Viral Hari Ini",
+  "Tips Produktivitas","Cara Mengatur Waktu",
+  "Motivasi Hidup","Quotes Inspiratif"
+];
+
+
+  // 2. Action (Kata Kerja / Frasa Depan)
+const actions = [
+  // Umum & Informasi
+  "Review lengkap","Spesifikasi","Harga terbaru","Harga pasaran","Daftar harga",
+  "Kelebihan dan kekurangan","Perbandingan","Perbandingan lengkap","Komparasi",
+  "Kenapa","Apa itu","Fungsi","Manfaat","Kegunaan","Penjelasan lengkap",
+  "Sejarah","Fakta menarik","Alasan memilih","Rekomendasi","Kesimpulan",
+
+  // Tutorial & Panduan
+  "Cara memperbaiki","Cara menggunakan","Cara memasang","Cara install",
+  "Cara update","Cara downgrade","Cara reset","Cara setting",
+  "Tutorial menggunakan","Tutorial lengkap","Panduan lengkap","Panduan pemula",
+  "Langkah-langkah","Tips dan trik","Tips pemula","Tips lanjutan",
+  "Solusi masalah","Cara mengatasi","Troubleshooting",
+
+  // Update & Berita
+  "Berita terkini","Update terbaru","Kabar terbaru","Info resmi",
+  "Rumor rilis","Bocoran","Prediksi","Jadwal rilis",
+  "Perkembangan terbaru","Analisa","Analisis mendalam",
+
+  // Media & Konten
+  "Unboxing","Hands-on","Preview","First impression",
+  "Wallpaper HD","Wallpaper terbaru","Background HD",
+  "Screenshot","Gambar asli","Video review",
+
+  // Download & File
+  "Download","Download resmi","Download driver","Link download",
+  "File terbaru","Firmware terbaru","Update firmware",
+  "ISO resmi","APK terbaru",
+
+  // Teknis & Detail
+  "Spesifikasi lengkap","Detail teknis","Benchmark",
+  "Uji performa","Tes kecepatan","Performa harian",
+  "Konsumsi daya","Daya tahan","Stabilitas sistem",
+
+  // Komunitas & Opini
+  "Forum diskusi","Pendapat pengguna","Review pengguna",
+  "Testimoni","Pengalaman pengguna","Diskusi lengkap",
+
+  // Edukasi & Insight
+  "Penjelasan sederhana","Penjelasan untuk pemula",
+  "Hal yang perlu diketahui","Yang wajib diketahui",
+  "Kesalahan umum","Masalah umum","Mitos dan fakta",
+
+  // Keputusan & Rekomendasi
+  "Layak dibeli","Masih worth it","Cocok untuk siapa",
+  "Alternatif terbaik","Pilihan terbaik",
+  "Lebih baik mana","Perlu beli atau tidak"
+];
+
+    // 3. Context (Pelengkap / Belakang)
+const contexts = [
+  // Waktu
+  "2024","2025","2026",
+  "hari ini","kemarin","minggu ini","bulan ini","tahun ini",
+  "update terbaru","versi terbaru","rilis terbaru",
+
+  // Lokasi & Bahasa
+  "di Indonesia","bahasa Indonesia","resmi Indonesia",
+  "Amerika","India","Rusia","Jerman","China","Korea","Jepang",
+  "Asia","Eropa","global",
+
+  // Target Pengguna
+  "untuk pemula","untuk profesional","untuk pelajar",
+  "untuk mahasiswa","untuk pekerja","untuk konten kreator",
+  "untuk gaming","untuk kerja","untuk belajar","untuk sehari-hari",
+
+  // Kualitas & Status
+  "resmi","legal","terpercaya","aman","original",
+  "paling murah","termurah","harga terjangkau",
+  "kualitas terbaik","rekomendasi","paling laris",
+
+  // Perbandingan & Tren
+  "vs kompetitor","vs versi lama","dibandingkan pesaing",
+  "yang viral","paling dicari","trending",
+  "populer saat ini","naik daun",
+
+  // Kondisi & Penilaian
+  "terbaik","paling bagus","paling worth it",
+  "layak dibeli","tidak direkomendasikan",
+  "masih relevan","sudah usang",
+
+  // Teknis & Detail
+  "tanpa ribet","mudah digunakan","praktis",
+  "tanpa biaya","gratis","free","versi premium",
+  "tanpa iklan","full fitur",
+
+  // Edukasi & Kejelasan
+  "lengkap dan jelas","step by step",
+  "disertai gambar","dengan contoh",
+  "penjelasan sederhana","bahasan mendalam",
+
+  // Legal & Keamanan
+  "tanpa risiko","aman digunakan",
+  "sesuai aturan","tanpa pelanggaran"
+];
 
     // Random Pick Function
     const pick = (arr: string[]) => arr[Math.floor(Math.random() * arr.length)];
